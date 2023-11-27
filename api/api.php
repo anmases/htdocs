@@ -4,8 +4,10 @@ include 'config.php';
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $result = $con->query("SELECT * FROM tren");
+$tabla = $_GET["tabla"];
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET' &&($tabla == 'tren' || $tabla == 'estacion' || $tabla == 'pasajero' || $tabla == 'trayecto' || $tabla == 'empleado' || $tabla == 'mantenimiento')) {
+    $result = $con->query("SELECT * FROM ". $tabla);
     $rows = array();
     while($row = $result->fetch_assoc()) {
         $rows[] = $row;
