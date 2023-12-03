@@ -7,6 +7,11 @@ $decimal = 1.25;
 $booleano = true;
 $nulo = null;
 
+#Constantes:
+const CONSTANTE = "hola";  //constante en tiempo de ejecución. constante global o de clase.
+
+define("MAX_SIZE", 100);   //constante en tiempo de ejecución. Solo constantes globales.
+echo MAX_SIZE;
 
 #echo es como el print, pero admite varios parámetros separados por , y los concatena (como el print de python), print solo admite un parámetro y además devuelve true si realiza correctamente la operación.
 echo "<h1>$texto , $numero</h1>";
@@ -16,7 +21,7 @@ echo "<b>". $texto ."</b><br>";
 echo "$texto <br> más texto";
 //para poner saltos de línea en html, en lo que se visualiza, se pone <br>, 
 //pero para ponerlos en php es con \n, de esta forma queda separado también en el código fuente.
-echo "\n<br><b>". $texto ."</b><br>\n";
+echo "\n<br><b>". $texto ."</b><br>\n"; //en php se concatena con .
 echo "$texto <br> \n más texto";
 // el retorno de carro (nuevo párrafo) es con \r y el tabulador \t, además \ se usa para enmascarar comillas o signos especiales como $ internamente.
 //estos caracteres se reflejan a nivel de código fuente, pero no de visualización html.
@@ -41,5 +46,25 @@ echo "$texto <br> \n más texto";
 */
 $fecha = date("d - n - Y   H:i:s");
 echo $fecha;
+
+$hoy = getdate();   //también podemos obtener la info de la fecha en forma de array asociativo.
+var_dump($hoy);
+
+date_default_timezone_get();   //nos devuelve la zona horaria predeterminada.
+date_default_timezone_set("Europe/Madrid");   //podemos añadir la zona horaria predeterminada.
+
+#Ámbito de la variable:
+
+function prueba(){
+    ///Si queremos usar variables que hemos definido fuera de una función, dentro, debemos declararlas dentro como global.
+    global $texto, $numero, $decimal;
+    echo $texto;
+
+    //también se puede acceder a ellas a través de la variable superglobal $GLOBALS
+    echo $GLOBALS["texto"];
+}
+#Depurador:
+var_dump($decimal); //nos devuelve el tipo de variable y su valor (da igual que sea objeto, array o primitivo)
+
 ?>
 
