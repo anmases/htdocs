@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>formulario</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!-- en action definimos el fichero donde enviará los datos-->
+    <!--el método get es si los datos del form se envian comoo parámetros 
+        en la url de la petición (get) o en el cuerpo del formulario(post)-->
+    <form name="form1" id="form1" method="post" action="procesa.php" enctype="multipart/form-data">
+        <p>
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario" id="usuarioId">
+        </p>
+        <p>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" id="passwordId">
+        </p>
+        <p>
+            <input type="submit" name="submit" id="submitId">
+        </p>
+    </form>
+</body>
+</html>

@@ -50,6 +50,12 @@ class Persona {
     }
 }
 
+$antonio = new Persona("antonio", "mas", 29);  //instanciar una clase
+$antonio->getEdad();
+
+Persona::esAnimal();   //El operador de resolución de ámbito se usa para acceder a constantes, métodos estáticos, 
+//es una referencia a la clase, a diferencia de -> que es a la instancia.
+
 
 //Define constantes con un método en tiempo de ejecución.
 define("CONSTANTE", "valor");
@@ -66,7 +72,7 @@ class Alumno extends Persona{
         parent::__construct($nombre, $apellidos, $edad);
         $this->curso = $curso;
     }
-
+//$this hace referencia al objeto instanciado de la clase, self a la clase en sí y parent a la superclase.
     public function mostrarCondicion(){
         return self::CONDICION;
     }
@@ -133,5 +139,14 @@ class Video{
 class Podcast{
     use Publicable;
 }
+
+#Métodos relacionados con las clases:
+class_exists("Persona"); //devuelve un booleano de si existe o no.
+class_implements("Cita"); //devuelve un array con las clases que implementa
+class_parents("Alumno"); //devuelve un array con sus clases padre.
+get_class($antonio);   //devolverá en nombre de la clase.
+get_class_vars("Persona"); //devuelve un array con los campos de la clase, solo si son públicos.
+get_class_methods("Persona"); //devuelve un array con los métodos de la clase.
+
 
 ?>

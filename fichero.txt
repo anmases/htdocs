@@ -1,0 +1,10 @@
+Este es el contenido de un fichero
+utilizamos PHP para leer
+utilizamos PHP para escribir
+Escribiendo contenido dentro del fichero
+Escribiendo contenido dentro del fichero
+Escribiendo contenido dentro del fichero
+Escribiendo contenido dentro del fichero
+Escribiendo contenido dentro del fichero
+Escribiendo contenido dentro del fichero
+Escribiendo contenido dentro del fichero

@@ -1,8 +1,10 @@
 <?php
 #Definición:
 $var = 0;
-
-function nombre($param1, $param2, $param3){
+/*
+podemos especificar el tipo de dato en los parámetros así como en el retorno
+*/
+function nombre(int $param1, int $param2, float $param3): int{
     //instrucciones
     return 2;  //retorno
 }
