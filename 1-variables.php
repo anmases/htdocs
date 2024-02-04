@@ -66,5 +66,21 @@ function prueba(){
 #Depurador:
 var_dump($decimal); //nos devuelve el tipo de variable y su valor (da igual que sea objeto, array o primitivo)
 
+#Comprobación de tipado:
+is_int(1);
+is_float(2.2);
+is_string('dd');
+is_bool(true);
+is_array(array(1,2,3));
+is_object(new stdClass());
+is_numeric(1.34);
+is_null(null);
+is_nan(NAN);
+is_infinite(1/0);
+is_finite(1);
+is_file("aaa.txt");
+is_dir("src");
+new DateTime() instanceof DateTime;
+(string) $numero; //casteo.
 ?>
 
