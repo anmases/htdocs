@@ -7,7 +7,6 @@ class Persona {
     private int $edad;
 
     //constructor (es como un método especial):
-
     public function __construct(String $nombre, String $apellidos, int $edad){
         // el operador -> es para llamar a un campo o función, sería como el . en java
         $this->nombre = $nombre;
@@ -72,7 +71,7 @@ class Alumno extends Persona{
         parent::__construct($nombre, $apellidos, $edad);
         $this->curso = $curso;
     }
-//$this hace referencia al objeto instanciado de la clase, self a la clase en sí y parent a la superclase.
+		//$this hace referencia al objeto instanciado de la clase, self a la clase en sí y parent a la superclase.
     public function mostrarCondicion(){
         return self::CONDICION;
     }
@@ -144,9 +143,9 @@ class Podcast{
 class_exists("Persona"); //devuelve un booleano de si existe o no.
 class_implements("Cita"); //devuelve un array con las clases que implementa
 class_parents("Alumno"); //devuelve un array con sus clases padre.
-get_class($antonio);   //devolverá en nombre de la clase.
+get_class($antonio);   //devolverá en nombre de la clase de un objeto.
 get_class_vars("Persona"); //devuelve un array con los campos de la clase, solo si son públicos.
-get_class_methods("Persona"); //devuelve un array con los métodos de la clase.
+get_class_methods("Persona"); //devuelve un array con los métodos de la clase, ''.
 
 
 ?>

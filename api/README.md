@@ -8,3 +8,6 @@
   - en caso de inserciones se requieren todos los campos en el cuerpo y ningún parámetro.
   - en caso de actualizaciones se requerirá el id como parámetro y el campo a actualizar en el cuerpo.
   - en caso de borrado se requerirá el id como parámetro.
+- Añadir multimedia:
+  - codificar fichero en base64 https://www.base64encoder.io/
+  

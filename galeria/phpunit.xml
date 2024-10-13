@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+				 convertErrorsToExceptions="true"
+				 convertNoticesToExceptions="true"
+				 convertWarningsToExceptions="true"
+				 stopOnFailure="false"
+         verbose="true">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <!-- Directorio donde están tus tests -->
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <!-- Otras configuraciones opcionales -->
+    <logging>
+        <!-- Puedes habilitar logs en diferentes formatos -->
+        <log type="junit" target="build/logs/junit.xml"/>
+    </logging>
+		<!-- Definir variables de entorno-->
+		<php>
+			<env name="APP" value="aplicacion"/>
+		</php>
+</phpunit>

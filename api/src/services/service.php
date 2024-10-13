@@ -39,6 +39,17 @@ abstract class Service{
             }
         }
         if($this->validate($data)){
+            if(isset($data["thumbnail"])){
+                $img_array = explode(";base64,", $data["thumbnail"]);
+                $img_file = $img_array[1];
+                $extension = strtolower(explode('/', $img_array[0])[1]);
+                $name = uniqid();
+                $path = dirname(__DIR__, 2)."\public\img\\".$name.".".$extension;
+                file_put_contents($path, base64_decode($img_file));
+                #$data["thumbnail"] = $name.".".$extension;   //Si queremos guardar el nombre en la BD.
+                // Remover la entrada con la clave "thumbnail"
+                unset($data["thumbnail"]);
+            }
             return $this->dao->create($this->table, $data);
         }else{
             header("HTTP/1.1 400 Data fields not valid");

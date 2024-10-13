@@ -26,8 +26,7 @@ function incremento2(&$num){
 incremento2($var);   //Esto si cambiará el valor de la variable de fuera
 echo $var;   
 
-//En java el paso de parámetro siempre es por valor,
-// para pasar por valor podemos invocar directamente la variable en la función. En php no podemos.
+//En java el paso de parámetro siempre es por valor, para pasar por referencia podemos invocar directamente la variable en la función. En php no podemos hacer eso.
 
 #Recursividad:
 echo "<br>";
